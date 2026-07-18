@@ -47,10 +47,6 @@
       <nav id="nav-links" aria-label="Main navigation">
         <a href="#menu">Menu</a><a href="#deals">Deals</a><a href="#about">Our Story</a><a href="#contact">Contact</a>
         <a class="button button--small" href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I%20want%20to%20place%20an%20order." target="_blank" rel="noopener">Order Now</a>
-        <button class="cart-btn" id="cart-btn" aria-label="View your order">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6L5 3H2" stroke-linecap="round"/><circle cx="9" cy="20" r="1.5" fill="currentColor"/><circle cx="18" cy="20" r="1.5" fill="currentColor"/></svg>
-          <span class="cart-btn__badge" id="cart-count">0</span>
-        </button>
       </nav>
     </div>
   </header>
@@ -74,12 +70,17 @@
           <span class="price-tag"><small>EVENING DEAL</small><b>RS. 1600</b></span>
         </div>
       </div>
-      <div class="ticker" aria-label="Popular menu categories"><div>HAND-TOSSED PIZZA <span>★</span> JUICY BURGERS <span>★</span> LOADED FRIES <span>★</span> ICE-COLD DRINKS <span>★</span> HAND-TOSSED PIZZA</div></div>
+      <div class="ticker" aria-label="Popular menu categories">
+        <div class="ticker__track">
+          <span>HAND-TOSSED PIZZA <i>★</i> JUICY BURGERS <i>★</i> LOADED FRIES <i>★</i> ICE-COLD DRINKS <i>★</i></span>
+          <span aria-hidden="true">HAND-TOSSED PIZZA <i>★</i> JUICY BURGERS <i>★</i> LOADED FRIES <i>★</i> ICE-COLD DRINKS <i>★</i></span>
+        </div>
+      </div>
     </section>
 
     <section class="section menu-section" id="menu">
       <div class="container">
-        <div class="section-head"><div><p class="kicker kicker--dark"><span></span> Crowd favourites</p><h2>THE MENU HITS</h2></div><p>Straight from our Kallar Syedan kitchen — pick a favourite and send your order directly on WhatsApp.</p></div>
+        <div class="section-head"><div><p class="kicker kicker--dark"><span></span> Crowd favourites</p><h2>THE MENU HITS</h2></div><p>Straight from our Kallar Syedan kitchen — tap a favourite to order it directly on WhatsApp.</p></div>
 
         <p class="menu-row-label">Burgers</p>
         <div class="menu-grid">
@@ -89,7 +90,9 @@
               <span class="food-card__cat">Burger</span>
               <h3>Zinger Burger</h3>
               <p>Crispy chicken zinger fillet, fresh lettuce &amp; house mayo in a soft bun.</p>
-              <div class="food-card__foot"><span class="food-card__price">Rs. 400</span><button class="food-card__order" data-name="Zinger Burger" data-price="Rs. 400" data-price-num="400">Add to Cart</button></div>
+              <div class="food-card__foot"><span class="food-card__price">Rs. 400</span>
+                <a class="food-card__order" target="_blank" rel="noopener" href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Zinger%20Burger%20(Rs.%20400).">Order</a>
+              </div>
             </div>
           </article>
           <article class="food-card">
@@ -98,7 +101,9 @@
               <span class="food-card__cat">Burger</span>
               <h3>Cheesy Beef Burger</h3>
               <p>Juicy beef patty loaded with melted cheese, lettuce &amp; house sauce.</p>
-              <div class="food-card__foot"><span class="food-card__price">Rs. 550</span><button class="food-card__order" data-name="Cheesy Beef Burger" data-price="Rs. 550" data-price-num="550">Add to Cart</button></div>
+              <div class="food-card__foot"><span class="food-card__price">Rs. 550</span>
+                <a class="food-card__order" target="_blank" rel="noopener" href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Cheesy%20Beef%20Burger%20(Rs.%20550).">Order</a>
+              </div>
             </div>
           </article>
           <article class="food-card">
@@ -107,7 +112,9 @@
               <span class="food-card__cat">Burger</span>
               <h3>Cheesy Chapli Burger</h3>
               <p>Spiced desi chapli patty topped with melted cheese &amp; signature sauce.</p>
-              <div class="food-card__foot"><span class="food-card__price">Rs. 450</span><button class="food-card__order" data-name="Cheesy Chapli Burger" data-price="Rs. 450" data-price-num="450">Add to Cart</button></div>
+              <div class="food-card__foot"><span class="food-card__price">Rs. 450</span>
+                <a class="food-card__order" target="_blank" rel="noopener" href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Cheesy%20Chapli%20Burger%20(Rs.%20450).">Order</a>
+              </div>
             </div>
           </article>
         </div>
@@ -117,31 +124,46 @@
           <article class="food-card">
             <div class="food-card__img"><img src="assets/menu/pizza1.jpg" alt="Chicken Tikka Pizza" loading="lazy"></div>
             <div class="food-card__body">
-              <span class="food-card__cat">Pizza · Regular</span>
+              <span class="food-card__cat">Pizza</span>
               <h3>Chicken Tikka</h3>
               <p>Red sauce, chicken tikka, cheese, onion, capsicum &amp; tomato.</p>
-              <div class="food-card__sizes"><span>S 500</span><span>M 1100</span><span>L 1450</span><span>XL 2050</span></div>
-              <div class="food-card__foot"><span class="food-card__price">From Rs. 500</span><button class="food-card__order" data-name="Chicken Tikka Pizza (S)" data-price="From Rs. 500" data-price-num="500">Add to Cart</button></div>
+              <div class="food-card__sizes">
+                <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Chicken%20Tikka%20Pizza%20-%20Small%20(Rs.%20500).">S · 500</a>
+                <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Chicken%20Tikka%20Pizza%20-%20Medium%20(Rs.%201100).">M · 1100</a>
+                <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Chicken%20Tikka%20Pizza%20-%20Large%20(Rs.%201450).">L · 1450</a>
+                <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Chicken%20Tikka%20Pizza%20-%20XL%20(Rs.%202050).">XL · 2050</a>
+              </div>
+              <p class="food-card__hint">Tap a size to order</p>
             </div>
           </article>
           <article class="food-card">
             <div class="food-card__img"><img src="assets/menu/pizza2.jpg" alt="Peri Peri Pizza" loading="lazy"></div>
             <div class="food-card__body">
-              <span class="food-card__cat">Pizza · Classic</span>
+              <span class="food-card__cat">Pizza</span>
               <h3>Peri Peri</h3>
               <p>Extreme sauce, mix chicken, cheese, black olives &amp; mushroom.</p>
-              <div class="food-card__sizes"><span>S 650</span><span>M 1300</span><span>L 1750</span><span>XL 2400</span></div>
-              <div class="food-card__foot"><span class="food-card__price">From Rs. 650</span><button class="food-card__order" data-name="Peri Peri Pizza (S)" data-price="From Rs. 650" data-price-num="650">Add to Cart</button></div>
+              <div class="food-card__sizes">
+                <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Peri%20Peri%20Pizza%20-%20Small%20(Rs.%20650).">S · 650</a>
+                <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Peri%20Peri%20Pizza%20-%20Medium%20(Rs.%201300).">M · 1300</a>
+                <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Peri%20Peri%20Pizza%20-%20Large%20(Rs.%201750).">L · 1750</a>
+                <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Peri%20Peri%20Pizza%20-%20XL%20(Rs.%202400).">XL · 2400</a>
+              </div>
+              <p class="food-card__hint">Tap a size to order</p>
             </div>
           </article>
           <article class="food-card">
             <div class="food-card__img"><img src="assets/menu/pizza3.jpg" alt="Smoke's Special Pizza" loading="lazy"></div>
             <div class="food-card__body">
-              <span class="food-card__cat">Pizza · Signature</span>
+              <span class="food-card__cat">Pizza</span>
               <h3>SMOKE'S Special</h3>
               <p>Special sauce, mix chicken, cheese, capsicum, mushroom, tomato, black olives &amp; sweet corn.</p>
-              <div class="food-card__sizes"><span>S 650</span><span>M 1300</span><span>L 1750</span><span>XL 2400</span></div>
-              <div class="food-card__foot"><span class="food-card__price">From Rs. 650</span><button class="food-card__order" data-name="SMOKE'S Special Pizza (S)" data-price="From Rs. 650" data-price-num="650">Add to Cart</button></div>
+              <div class="food-card__sizes">
+                <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20SMOKE'S%20Special%20Pizza%20-%20Small%20(Rs.%20650).">S · 650</a>
+                <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20SMOKE'S%20Special%20Pizza%20-%20Medium%20(Rs.%201300).">M · 1300</a>
+                <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20SMOKE'S%20Special%20Pizza%20-%20Large%20(Rs.%201750).">L · 1750</a>
+                <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20SMOKE'S%20Special%20Pizza%20-%20XL%20(Rs.%202400).">XL · 2400</a>
+              </div>
+              <p class="food-card__hint">Tap a size to order</p>
             </div>
           </article>
         </div>
@@ -154,7 +176,9 @@
               <span class="food-card__cat">Pasta</span>
               <h3>Crunchy Pasta</h3>
               <p>A crispy, saucy pasta bake finished with melted cheese.</p>
-              <div class="food-card__foot"><span class="food-card__price">Rs. 850</span><button class="food-card__order" data-name="Crunchy Pasta" data-price="Rs. 850" data-price-num="850">Add to Cart</button></div>
+              <div class="food-card__foot"><span class="food-card__price">Rs. 850</span>
+                <a class="food-card__order" target="_blank" rel="noopener" href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Crunchy%20Pasta%20(Rs.%20850).">Order</a>
+              </div>
             </div>
           </article>
           <article class="food-card">
@@ -163,7 +187,9 @@
               <span class="food-card__cat">Pasta</span>
               <h3>Creamy Pasta</h3>
               <p>Rich, velvety white sauce tossed with tender chicken.</p>
-              <div class="food-card__foot"><span class="food-card__price">Rs. 750</span><button class="food-card__order" data-name="Creamy Pasta" data-price="Rs. 750" data-price-num="750">Add to Cart</button></div>
+              <div class="food-card__foot"><span class="food-card__price">Rs. 750</span>
+                <a class="food-card__order" target="_blank" rel="noopener" href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Creamy%20Pasta%20(Rs.%20750).">Order</a>
+              </div>
             </div>
           </article>
           <article class="food-card">
@@ -172,7 +198,9 @@
               <span class="food-card__cat">Pasta</span>
               <h3>Alfredo Pasta</h3>
               <p>Classic creamy alfredo finished with a generous layer of cheese.</p>
-              <div class="food-card__foot"><span class="food-card__price">Rs. 800</span><button class="food-card__order" data-name="Alfredo Pasta" data-price="Rs. 800" data-price-num="800">Add to Cart</button></div>
+              <div class="food-card__foot"><span class="food-card__price">Rs. 800</span>
+                <a class="food-card__order" target="_blank" rel="noopener" href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Alfredo%20Pasta%20(Rs.%20800).">Order</a>
+              </div>
             </div>
           </article>
         </div>
@@ -212,32 +240,8 @@
     </div><div class="contact__details"><p><small>VISIT US</small>Main Chowa Road, Near Suzuki Motors, Kallar Syedan</p><p><small>CALL US</small><a href="tel:03034520333">0303-4520333</a> · <a href="tel:03114520333">0311-4520333</a> · <a href="tel:0513570660">051-3570660</a></p><a class="button button--light" href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I%20want%20to%20place%20an%20order." target="_blank" rel="noopener">Start WhatsApp Order →</a></div></div></section>
   </main>
   <footer>
-    <div class="container footer__social-row">
-      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
-      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2c2.7 0 3.1 0 4.1.1 1.1 0 1.8.2 2.5.5.7.3 1.2.6 1.8 1.2.6.6.9 1.1 1.2 1.8.3.7.4 1.4.5 2.5.1 1 .1 1.4.1 4.1s0 3.1-.1 4.1c0 1.1-.2 1.8-.5 2.5-.3.7-.6 1.2-1.2 1.8-.6.6-1.1.9-1.8 1.2-.7.3-1.4.4-2.5.5-1 .1-1.4.1-4.1.1s-3.1 0-4.1-.1c-1.1 0-1.8-.2-2.5-.5-.7-.3-1.2-.6-1.8-1.2-.6-.6-.9-1.1-1.2-1.8-.3-.7-.4-1.4-.5-2.5C2 15.1 2 14.7 2 12s0-3.1.1-4.1c0-1.1.2-1.8.5-2.5.3-.7.6-1.2 1.2-1.8.6-.6 1.1-.9 1.8-1.2.7-.3 1.4-.4 2.5-.5C8.9 2 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg></a>
-      <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16.6 5.82c-1.1-.96-1.66-2.32-1.66-3.82h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V8.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3c-1.28 0-2.42-.55-3.24-1.48z"/></svg></a>
-    </div>
     <div class="container"><span>© <span id="year"></span> Smoke's Pizza, Burger & Ice Bar</span><span>Kallar Syedan · Made fresh, served hot.</span></div>
   </footer>
-
-  <div class="cart-overlay" id="cart-overlay"></div>
-  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true" aria-label="Your order">
-    <div class="cart-drawer__head">
-      <h3>Your Order</h3>
-      <button class="cart-drawer__close" id="cart-close" aria-label="Close cart">&times;</button>
-    </div>
-    <div class="cart-drawer__items" id="cart-items">
-      <p class="cart-empty" id="cart-empty">Your cart is empty. Add a few favourites to get started.</p>
-    </div>
-    <div class="cart-drawer__foot">
-      <p class="cart-drawer__note">Pizza prices shown are starting (Small) prices — confirm your size on WhatsApp.</p>
-      <div class="cart-drawer__total"><span>Estimated total</span><strong id="cart-total">Rs. 0</strong></div>
-      <button class="button button--block" id="cart-checkout">Checkout on WhatsApp →</button>
-      <button class="cart-drawer__clear" id="cart-clear">Clear cart</button>
-    </div>
-  </aside>
-
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="js/main.js"></script>
 </body>
