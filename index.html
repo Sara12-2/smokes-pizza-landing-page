@@ -13,7 +13,7 @@
 <body>
   <svg style="display:none" aria-hidden="true">
     <symbol id="delivery-rider" viewBox="0 0 300 195">
-      <g stroke="#fff" stroke-opacity=".35" stroke-width="5" stroke-linecap="round">
+      <g class="rider-lines" stroke="#fff" stroke-opacity=".35" stroke-width="5" stroke-linecap="round">
         <path d="M4 70h28"/><path d="M0 92h30"/><path d="M6 114h24"/>
       </g>
       <ellipse cx="170" cy="178" rx="130" ry="8" fill="#000" opacity=".18"/>
@@ -82,9 +82,15 @@
       <div class="container">
         <div class="section-head"><div><p class="kicker kicker--dark"><span></span> Crowd favourites</p><h2>THE MENU HITS</h2></div><p>Straight from our Kallar Syedan kitchen — tap a favourite to order it directly on WhatsApp.</p></div>
 
-        <p class="menu-row-label">Burgers</p>
-        <div class="menu-grid">
-          <article class="food-card">
+        <div class="menu-filters" role="tablist" aria-label="Filter menu by category">
+          <button class="menu-filter is-active" type="button" data-filter="all" role="tab" aria-selected="true" tabindex="0">All</button>
+          <button class="menu-filter" type="button" data-filter="burger" role="tab" aria-selected="false" tabindex="-1">Burgers</button>
+          <button class="menu-filter" type="button" data-filter="pizza" role="tab" aria-selected="false" tabindex="-1">Pizza</button>
+          <button class="menu-filter" type="button" data-filter="pasta" role="tab" aria-selected="false" tabindex="-1">Pasta</button>
+        </div>
+
+        <div class="menu-grid" id="menu-grid">
+          <article class="food-card" data-category="burger">
             <div class="food-card__img"><img src="assets/menu/burger1.jpg" alt="Zinger Burger" loading="lazy"></div>
             <div class="food-card__body">
               <span class="food-card__cat">Burger</span>
@@ -95,7 +101,7 @@
               </div>
             </div>
           </article>
-          <article class="food-card">
+          <article class="food-card" data-category="burger">
             <div class="food-card__img"><img src="assets/menu/burger2.jpg" alt="Cheesy Beef Burger" loading="lazy"></div>
             <div class="food-card__body">
               <span class="food-card__cat">Burger</span>
@@ -106,7 +112,7 @@
               </div>
             </div>
           </article>
-          <article class="food-card">
+          <article class="food-card" data-category="burger">
             <div class="food-card__img"><img src="assets/menu/burger3.jpg" alt="Cheesy Chapli Burger" loading="lazy"></div>
             <div class="food-card__body">
               <span class="food-card__cat">Burger</span>
@@ -117,11 +123,19 @@
               </div>
             </div>
           </article>
-        </div>
+          <article class="food-card" data-category="burger">
+            <div class="food-card__img"><img src="assets/menu/burger4.jpg" alt="Grilled Chicken Burger" loading="lazy"></div>
+            <div class="food-card__body">
+              <span class="food-card__cat">Burger</span>
+              <h3>Grilled Chicken Burger</h3>
+              <p>Chargrilled chicken fillet with fresh veggies &amp; smoky mayo.</p>
+              <div class="food-card__foot"><span class="food-card__price">Rs. 480</span>
+                <a class="food-card__order" target="_blank" rel="noopener" href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Grilled%20Chicken%20Burger%20(Rs.%20480).">Order</a>
+              </div>
+            </div>
+          </article>
 
-        <p class="menu-row-label">Pizzas</p>
-        <div class="menu-grid">
-          <article class="food-card">
+          <article class="food-card" data-category="pizza">
             <div class="food-card__img"><img src="assets/menu/pizza1.jpg" alt="Chicken Tikka Pizza" loading="lazy"></div>
             <div class="food-card__body">
               <span class="food-card__cat">Pizza</span>
@@ -136,7 +150,7 @@
               <p class="food-card__hint">Tap a size to order</p>
             </div>
           </article>
-          <article class="food-card">
+          <article class="food-card" data-category="pizza">
             <div class="food-card__img"><img src="assets/menu/pizza2.jpg" alt="Peri Peri Pizza" loading="lazy"></div>
             <div class="food-card__body">
               <span class="food-card__cat">Pizza</span>
@@ -151,7 +165,7 @@
               <p class="food-card__hint">Tap a size to order</p>
             </div>
           </article>
-          <article class="food-card">
+          <article class="food-card" data-category="pizza">
             <div class="food-card__img"><img src="assets/menu/pizza3.jpg" alt="Smoke's Special Pizza" loading="lazy"></div>
             <div class="food-card__body">
               <span class="food-card__cat">Pizza</span>
@@ -166,11 +180,23 @@
               <p class="food-card__hint">Tap a size to order</p>
             </div>
           </article>
-        </div>
+          <article class="food-card" data-category="pizza">
+            <div class="food-card__img"><img src="assets/menu/pizza4.jpg" alt="Margherita Pizza" loading="lazy"></div>
+            <div class="food-card__body">
+              <span class="food-card__cat">Pizza</span>
+              <h3>Margherita</h3>
+              <p>Classic red sauce, mozzarella &amp; a finish of fresh basil.</p>
+              <div class="food-card__sizes">
+                <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Margherita%20Pizza%20-%20Small%20(Rs.%20450).">S · 450</a>
+                <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Margherita%20Pizza%20-%20Medium%20(Rs.%20950).">M · 950</a>
+                <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Margherita%20Pizza%20-%20Large%20(Rs.%201300).">L · 1300</a>
+                <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Margherita%20Pizza%20-%20XL%20(Rs.%201800).">XL · 1800</a>
+              </div>
+              <p class="food-card__hint">Tap a size to order</p>
+            </div>
+          </article>
 
-        <p class="menu-row-label">Pastas</p>
-        <div class="menu-grid">
-          <article class="food-card">
+          <article class="food-card" data-category="pasta">
             <div class="food-card__img"><img src="assets/menu/pasta1.jpg" alt="Crunchy Pasta" loading="lazy"></div>
             <div class="food-card__body">
               <span class="food-card__cat">Pasta</span>
@@ -181,7 +207,7 @@
               </div>
             </div>
           </article>
-          <article class="food-card">
+          <article class="food-card" data-category="pasta">
             <div class="food-card__img"><img src="assets/menu/pasta2.jpg" alt="Creamy Pasta" loading="lazy"></div>
             <div class="food-card__body">
               <span class="food-card__cat">Pasta</span>
@@ -192,7 +218,7 @@
               </div>
             </div>
           </article>
-          <article class="food-card">
+          <article class="food-card" data-category="pasta">
             <div class="food-card__img"><img src="assets/menu/pasta3.jpg" alt="Alfredo Pasta" loading="lazy"></div>
             <div class="food-card__body">
               <span class="food-card__cat">Pasta</span>
@@ -203,7 +229,19 @@
               </div>
             </div>
           </article>
+          <article class="food-card" data-category="pasta">
+            <div class="food-card__img"><img src="assets/menu/pasta4.jpg" alt="Arrabiata Pasta" loading="lazy"></div>
+            <div class="food-card__body">
+              <span class="food-card__cat">Pasta</span>
+              <h3>Arrabiata Pasta</h3>
+              <p>Spicy red sauce with garlic, chilli flakes &amp; a finish of parmesan.</p>
+              <div class="food-card__foot"><span class="food-card__price">Rs. 780</span>
+                <a class="food-card__order" target="_blank" rel="noopener" href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20to%20order%3A%201x%20Arrabiata%20Pasta%20(Rs.%20780).">Order</a>
+              </div>
+            </div>
+          </article>
         </div>
+        <p class="menu-empty" id="menu-empty" hidden>No items in this category yet — check back soon.</p>
       </div>
     </section>
 
@@ -211,9 +249,30 @@
       <div class="container">
         <div class="section-head"><div><p class="kicker kicker--dark"><span></span> Signature deals</p><h2>BEST VALUE COMBOS</h2></div><p>Bigger cravings, better prices — our most-ordered combo deals.</p></div>
         <div class="deals-grid">
-          <article class="menu-card deal-card"><div class="deal-card__art"><b>1</b><span>LARGE<br>PIZZA</span><i>+</i><b>1L</b><span>COLD<br>DRINK</span></div><div class="menu-card__body"><span>EVENING DEAL</span><h3>Craving Combo</h3><p>One large pizza plus a one-litre cold drink.</p><a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20the%20Evening%20Deal%20for%20Rs.%201600." target="_blank" rel="noopener">Get it for Rs. 1600 →</a></div></article>
-          <article class="menu-card deal-card"><div class="deal-card__art"><b>2</b><span>LARGE<br>PIZZA</span><i>+</i><b>1.5L</b><span>COLD<br>DRINK</span></div><div class="menu-card__body"><span>MIDNIGHT DEAL</span><h3>Pizza Lovers</h3><p>Two large pizzas plus a 1.5 litre cold drink.</p><a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20the%20Midnight%20Deal%20for%20Rs.%203100." target="_blank" rel="noopener">Get it for Rs. 3100 →</a></div></article>
-          <article class="menu-card deal-card"><div class="deal-card__art"><b>1</b><span>SMALL<br>PIZZA</span><i>+</i><b>1</b><span>TIN<br>PACK</span></div><div class="menu-card__body"><span>STUDENT DEAL</span><h3>Budget Bite</h3><p>One small pizza plus a chilled tin pack drink.</p><a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20the%20Student%20Deal%20for%20Rs.%20600." target="_blank" rel="noopener">Get it for Rs. 600 →</a></div></article>
+          <article class="deal-card">
+            <div class="deal-card__media"><img src="assets/deals/evening-deal.jpg" alt="Large pizza with a cold drink" loading="lazy"><span class="deal-card__badge">Evening Deal</span></div>
+            <div class="menu-card__body">
+              <h3>Craving Combo</h3>
+              <p>One large pizza plus a one-litre cold drink.</p>
+              <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20the%20Evening%20Deal%20for%20Rs.%201600." target="_blank" rel="noopener">Get it for Rs. 1600 →</a>
+            </div>
+          </article>
+          <article class="deal-card">
+            <div class="deal-card__media"><img src="assets/deals/midnight-deal.jpg" alt="Two large pizzas with a cold drink" loading="lazy"><span class="deal-card__badge">Midnight Deal</span></div>
+            <div class="menu-card__body">
+              <h3>Pizza Lovers</h3>
+              <p>Two large pizzas plus a 1.5 litre cold drink.</p>
+              <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20the%20Midnight%20Deal%20for%20Rs.%203100." target="_blank" rel="noopener">Get it for Rs. 3100 →</a>
+            </div>
+          </article>
+          <article class="deal-card">
+            <div class="deal-card__media"><img src="assets/deals/student-deal.jpg" alt="Small pizza with a tin pack drink" loading="lazy"><span class="deal-card__badge">Student Deal</span></div>
+            <div class="menu-card__body">
+              <h3>Budget Bite</h3>
+              <p>One small pizza plus a chilled tin pack drink.</p>
+              <a href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I'd%20like%20the%20Student%20Deal%20for%20Rs.%20600." target="_blank" rel="noopener">Get it for Rs. 600 →</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -237,10 +296,30 @@
 
     <section class="contact section" id="contact"><div class="container contact__box"><div><p class="kicker"><span></span> Hungry yet?</p><h2>YOUR NEXT FAVOURITE<br>MEAL IS ONE MESSAGE AWAY.</h2>
       <svg class="contact__rider" viewBox="0 0 300 195" width="230" height="150" aria-hidden="true" focusable="false"><use href="#delivery-rider"/></svg>
-    </div><div class="contact__details"><p><small>VISIT US</small>Main Chowa Road, Near Suzuki Motors, Kallar Syedan</p><p><small>CALL US</small><a href="tel:03034520333">0303-4520333</a> · <a href="tel:03114520333">0311-4520333</a> · <a href="tel:0513570660">051-3570660</a></p><a class="button button--light" href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I%20want%20to%20place%20an%20order." target="_blank" rel="noopener">Start WhatsApp Order →</a></div></div></section>
+    </div><div class="contact__details">
+      <div class="contact__block"><small>VISIT US</small><p>Main Chowa Road, Near Suzuki Motors, Kallar Syedan</p></div>
+      <div class="contact__block"><small>CALL US</small>
+        <div class="contact__phones">
+          <a href="tel:03034520333"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M6.6 10.8a15.9 15.9 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.9c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1z"/></svg>0303-4520333</a>
+          <a href="tel:03114520333"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M6.6 10.8a15.9 15.9 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.9c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1z"/></svg>0311-4520333</a>
+          <a href="tel:0513570660"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M6.6 10.8a15.9 15.9 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.9c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1z"/></svg>051-3570660</a>
+        </div>
+      </div>
+      <div class="contact__actions">
+        <a class="button button--light" href="https://wa.me/923034520333?text=Hi%20Smoke's!%20I%20want%20to%20place%20an%20order." target="_blank" rel="noopener">Order on WhatsApp →</a>
+        <a class="button button--outline" href="tel:03034520333">Call Now</a>
+      </div>
+    </div></div></section>
   </main>
   <footer>
-    <div class="container"><span>© <span id="year"></span> Smoke's Pizza, Burger & Ice Bar</span><span>Kallar Syedan · Made fresh, served hot.</span></div>
+    <div class="container footer__inner">
+      <div class="footer__social-row" aria-label="Follow Smoke's on social media">
+        <a href="#" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
+        <a href="#" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2c2.7 0 3.1 0 4.1.1 1.1 0 1.8.2 2.5.5.7.3 1.2.6 1.8 1.2.6.6.9 1.1 1.2 1.8.3.7.4 1.4.5 2.5.1 1 .1 1.4.1 4.1s0 3.1-.1 4.1c0 1.1-.2 1.8-.5 2.5-.3.7-.6 1.2-1.2 1.8-.6.6-1.1.9-1.8 1.2-.7.3-1.4.4-2.5.5-1 .1-1.4.1-4.1.1s-3.1 0-4.1-.1c-1.1 0-1.8-.2-2.5-.5-.7-.3-1.2-.6-1.8-1.2-.6-.6-.9-1.1-1.2-1.8-.3-.7-.4-1.4-.5-2.5C2 15.1 2 14.7 2 12s0-3.1.1-4.1c0-1.1.2-1.8.5-2.5.3-.7.6-1.2 1.2-1.8.6-.6 1.1-.9 1.8-1.2.7-.3 1.4-.4 2.5-.5C8.9 2 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg></a>
+        <a href="https://wa.me/923034520333" aria-label="WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.1 8.1 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8 1-.2.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.2-.2 0-.4.1-.5.1-.1.2-.3.4-.4.1-.2.2-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.4-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.7 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
+      </div>
+      <div class="footer__text"><span>© <span id="year"></span> Smoke's Pizza, Burger & Ice Bar</span><span>Kallar Syedan · Made fresh, served hot.</span></div>
+    </div>
   </footer>
 
   <script src="js/main.js"></script>
