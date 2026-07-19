@@ -832,7 +832,7 @@ h1 em, h2 em {
 }
 
 /* ========================================
-   STORY
+   STORY - SIMPLIFIED (No Phone Button)
    ======================================== */
 .story {
   background: #101010;
@@ -891,7 +891,7 @@ h1 em, h2 em {
 }
 
 /* ========================================
-   CONTACT - SUPER SIMPLE
+   CONTACT - SUPER SIMPLE (Only Heading + Rider + 2 Buttons)
    ======================================== */
 .contact {
   background: linear-gradient(135deg, var(--red) 0%, #a8141a 100%);
@@ -932,7 +932,7 @@ h1 em, h2 em {
   gap: 60px;
   position: relative;
   z-index: 1;
-  align-items: start;
+  align-items: center;
 }
 
 /* ===== LEFT SIDE ===== */
@@ -974,181 +974,42 @@ h1 em, h2 em {
   line-height: 1.7;
 }
 
-/* Rider */
-.contact__rider-wrapper {
-  margin-top: 20px;
-  display: inline-block;
-}
-
-.contact__rider {
-  width: 220px;
-  height: auto;
-  filter: drop-shadow(0 12px 30px rgba(0,0,0,.25));
-}
-
 /* ===== RIGHT SIDE ===== */
 .contact__right {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-}
-
-/* Hours */
-.contact__hours {
-  display: flex;
   align-items: center;
-  gap: 16px;
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: var(--radius-md);
-  padding: 16px 22px;
+  gap: 30px;
 }
 
-.contact__hours-icon {
-  width: 44px;
-  height: 44px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--gold);
+/* Rider */
+.contact__rider-wrapper {
+  display: inline-block;
 }
 
-.contact__hours-label {
-  display: block;
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #ffd8d8;
-}
-
-.contact__hours-time {
-  display: block;
-  font-size: 20px;
-  font-weight: 800;
-  font-family: var(--display);
-  letter-spacing: 0.5px;
-}
-
-/* Info Items - Simple List */
-.contact__info {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: var(--radius-md);
-  padding: 16px 20px;
-  transition: background-color .3s ease;
-}
-
-.contact__info:hover {
-  background: rgba(255,255,255,0.1);
-}
-
-.contact__info--whatsapp {
-  background: rgba(37,211,102,0.12);
-  border-color: rgba(37,211,102,0.2);
-}
-
-.contact__info--whatsapp:hover {
-  background: rgba(37,211,102,0.2);
-}
-
-.contact__info-icon {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  background: rgba(255,255,255,0.06);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gold);
-}
-
-.contact__info-icon--whatsapp {
-  background: rgba(37,211,102,0.2);
-  color: #25D366;
-}
-
-.contact__info small {
-  display: block;
-  color: #ffd8d8;
-  font-weight: 800;
-  font-size: 9px;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  margin-bottom: 2px;
-}
-
-.contact__info p {
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.4;
-  opacity: 0.9;
-}
-
-/* Phones */
-.contact__phones {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.contact__phones a {
-  font-weight: 700;
-  font-size: 14px;
-  transition: opacity .2s ease;
-}
-
-.contact__phones a:hover {
-  opacity: 0.7;
-  text-decoration: underline;
-}
-
-/* WhatsApp Button */
-.contact__whatsapp-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 4px;
-  background: #25D366;
-  color: #fff !important;
-  font-weight: 800;
-  font-size: 12px;
-  text-transform: uppercase;
-  padding: 8px 18px;
-  border-radius: var(--radius-lg);
-  transition: transform .2s ease, box-shadow .2s ease;
-  box-shadow: 0 4px 14px rgba(37,211,102,.3);
-}
-
-.contact__whatsapp-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(37,211,102,.4);
+.contact__rider {
+  width: 260px;
+  height: auto;
+  filter: drop-shadow(0 12px 30px rgba(0,0,0,.25));
 }
 
 /* CTA Buttons */
 .contact__actions {
   display: flex;
-  gap: 14px;
+  gap: 16px;
   flex-wrap: wrap;
-  margin-top: 4px;
+  justify-content: center;
+  width: 100%;
 }
 
 .contact__actions .button {
   flex: 1;
-  min-width: 180px;
+  min-width: 200px;
   justify-content: center;
   gap: 10px;
-  font-size: 14px;
-  padding: 14px 24px;
+  font-size: 15px;
+  padding: 16px 28px;
+  min-height: 56px;
 }
 
 .contact__actions .button svg {
@@ -1218,7 +1079,7 @@ footer {
   }
 
   .contact__rider {
-    width: 180px;
+    width: 200px;
   }
 
   .contact__header h2 {
@@ -1355,17 +1216,15 @@ footer {
     margin: 0 auto;
   }
 
-  .contact__rider-wrapper {
-    display: flex;
-    justify-content: center;
-  }
-
   .contact__rider {
-    width: 160px;
+    width: 180px;
   }
 
-  .contact__hours-time {
-    font-size: 18px;
+  .contact__actions .button {
+    min-width: 160px;
+    font-size: 14px;
+    padding: 14px 22px;
+    min-height: 50px;
   }
 }
 
@@ -1612,7 +1471,7 @@ footer {
     left: 12px;
   }
 
-  /* Story */
+  /* Story - Mobile */
   .story {
     padding: 50px 0;
   }
@@ -1646,18 +1505,13 @@ footer {
     font-size: 14px;
   }
 
-  .story .button {
-    width: 100%;
-    justify-content: center;
-  }
-
   /* CONTACT - MOBILE */
   .contact {
     padding: 40px 0 30px;
   }
 
   .contact__wrapper {
-    gap: 24px;
+    gap: 20px;
   }
 
   .contact__header h2 {
@@ -1673,70 +1527,25 @@ footer {
     font-size: 15px;
   }
 
-  .contact__rider {
-    width: 130px;
-  }
-
   .contact__right {
-    gap: 14px;
+    gap: 20px;
   }
 
-  .contact__hours {
-    padding: 12px 16px;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
-  .contact__hours-icon {
-    width: 36px;
-    height: 36px;
-  }
-
-  .contact__hours-time {
-    font-size: 16px;
-  }
-
-  .contact__info {
-    padding: 14px 16px;
-    gap: 12px;
-  }
-
-  .contact__info-icon {
-    width: 34px;
-    height: 34px;
-  }
-
-  .contact__info-icon svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  .contact__info p {
-    font-size: 12px;
-  }
-
-  .contact__phones a {
-    font-size: 13px;
-  }
-
-  .contact__whatsapp-btn {
-    font-size: 11px;
-    padding: 6px 14px;
-    width: 100%;
-    justify-content: center;
+  .contact__rider {
+    width: 150px;
   }
 
   .contact__actions {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
 
   .contact__actions .button {
     min-width: auto;
     width: 100%;
-    font-size: 13px;
-    padding: 12px 20px;
-    min-height: 48px;
+    font-size: 14px;
+    padding: 14px 20px;
+    min-height: 52px;
   }
 
   /* Hide rider on very small screens */
@@ -1799,20 +1608,14 @@ footer {
     font-size: 24px;
   }
 
-  .contact__hours-time {
-    font-size: 14px;
+  .contact__rider {
+    width: 120px;
   }
 
-  .contact__info {
-    padding: 12px 12px;
-  }
-
-  .contact__info p {
-    font-size: 11px;
-  }
-
-  .contact__phones a {
-    font-size: 12px;
+  .contact__actions .button {
+    font-size: 13px;
+    padding: 12px 16px;
+    min-height: 46px;
   }
 }
 
